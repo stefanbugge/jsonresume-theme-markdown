@@ -31,13 +31,13 @@
 
 {{#each work}}
 ### {{position}}{{#if company}}, {{#if website}}[{{company}}]({{{website}}}){{^}}{{company}}{{/if}}{{/if}}
-##### {{startDate}} {{#if endDate}}- {{endDate}}{{/if}}
+##### {{startDate}} - {{#if endDate}}{{endDate}}{{else}}Current{{/if}}
+
+{{summary}}
 
 {{#each highlights}}
 * {{.}}
 {{/each}}
-
-{{summary}}
 
 {{/each}}
 {{/if}}
@@ -93,7 +93,7 @@
 {{#if skills}}## Skills
 
 {{#each skills}}
-* {{#if level}}{{level}} in {{/if}}{{name}}{{#if keywords}} ({{commaSeparated keywords}}){{/if}}
+* {{#if level}}{{level}} in {{/if}}{{name}}{{#if keywords}} ({{join keywords}}){{/if}}
 {{/each}}
 {{/if}}
 
@@ -107,7 +107,7 @@
 {{#if interests}}## Interests
 
 {{#each interests}}
-* {{name}}{{#if keywords}} ({{commaSeparated keywords}}){{/if}}
+* {{name}}{{#if keywords}} ({{join keywords}}){{/if}}
 {{/each}}
 {{/if}}
 
