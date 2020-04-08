@@ -1,14 +1,18 @@
 {
   "name": "jsonresume-theme-markdown",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "Basic Markdown theme for JSON Resume",
-  "author": "Jeff Turner",
+  "author": "Original by Jeff Turner, changed by Stefan Loeschcke",
+  "license": "MIT",
+  "scripts": {
+    "serve": "resume serve"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jtwebman/jsonresume-theme-markdown"
+    "url": "https://github.com/stefanbugge/jsonresume-theme-markdown"
   },
-  "license": "MIT",
-  "dependencies": {
-    "handlebars": "^2.0.0"
+  "devDependencies": {
+    "handlebars": "4.7.6",
+    "resume-cli": "^1.2.7"
   }
 }
