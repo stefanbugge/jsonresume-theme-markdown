@@ -1,26 +1,17 @@
-var fs = require("fs");
-var Handlebars = require("handlebars");
+const fs = require("fs")
+const Handlebars = require("handlebars")
 
-Handlebars.registerHelper('commaSeparated', function(keywords) {
-	var text = '';
-	if (Array.isArray(keywords)) {
-		for (i = 0; i < keywords.length; i++) {
-			text += keywords[i];
-			if (i < keywords.length - 1) text += ', ';
-		}
-	} else {
-		text = keywords.tostring();
-	}
-	return text;
-});
+Handlebars.registerHelper("join", function (keywords) {
+  return [].concat(keywords).join(", ")
+})
 
 function render(resume) {
-	var template = fs.readFileSync(__dirname + "/resume.template", "utf-8");
-	return Handlebars.compile(template)({
-		resume: resume
-	});
+  var template = fs.readFileSync(__dirname + "/resume.hbs", "utf-8")
+  return Handlebars.compile(template)({
+    resume
+  })
 }
 
 module.exports = {
-	render: render
-};
+  render: render
+}
