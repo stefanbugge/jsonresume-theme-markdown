@@ -13,6 +13,6 @@
   },
   "devDependencies": {
     "handlebars": "4.7.6",
-    "resume-cli": "^1.2.7"
+    "resume-cli": "^2.0.0"
   }
 }
